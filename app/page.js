@@ -1,7 +1,6 @@
 "use client";
 import { Box, Button, Stack, TextField } from "@mui/material";
-import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function Home() {
   const [messages, setMessages] = useState([
@@ -13,7 +12,12 @@ export default function Home() {
   ]);
 
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const chatContainerRef = useRef(null);
+
   const sendMessage = async () => {
+    if (!message.trim()) return; // Don't send empty messages
+
     setMessages((messages) => [
       ...messages,
       { role: "user", content: message },
@@ -21,6 +25,7 @@ export default function Home() {
     ]);
 
     setMessage("");
+    setLoading(true);
 
     const response = fetch("/api/chat", {
       method: "POST",
@@ -35,6 +40,7 @@ export default function Home() {
       let result = "";
       return reader.read().then(function processText({ done, value }) {
         if (done) {
+          setLoading(false);
           return result;
         }
         const text = decoder.decode(value || new Uint8Array(), {
@@ -54,6 +60,23 @@ export default function Home() {
       });
     });
   };
+
+  // Auto-scroll to bottom whenever messages update
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
+
+  // Handle Enter key press
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault(); // Prevent the default behavior of adding a new line
+      sendMessage(); // Call the sendMessage function
+    }
+  };
+
   return (
     <Box
       width="100vw"
@@ -77,12 +100,14 @@ export default function Home() {
           flexGrow={1}
           overflow="auto"
           maxHeight="100%"
+          ref={chatContainerRef} // Attach the ref to the chat container
         >
           {messages.map((message, index) => (
             <Box
               key={index}
               display="flex"
-              justifyContent={
+              flexDirection="column"
+              alignItems={
                 message.role === "assistant" ? "flex-start" : "flex-end"
               }
             >
@@ -98,6 +123,13 @@ export default function Home() {
               >
                 {message.content}
               </Box>
+              {index === messages.length - 1 &&
+                message.role === "assistant" &&
+                loading && (
+                  <Box color="gray" mt={1} fontStyle="italic">
+                    Typing...
+                  </Box>
+                )}
             </Box>
           ))}
         </Stack>
@@ -109,6 +141,8 @@ export default function Home() {
             onChange={(e) => {
               setMessage(e.target.value);
             }}
+            onKeyDown={handleKeyDown} // Add key down handler
+            multiline
           />
           <Button variant="contained" onClick={sendMessage}>
             Send
