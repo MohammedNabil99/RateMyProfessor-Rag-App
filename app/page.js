@@ -85,14 +85,28 @@ export default function Home() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      p={2} // Add padding to the entire page
+      sx={{
+        "@media (max-width: 600px)": {
+          p: 1,
+        },
+      }}
     >
       <Stack
         direction="column"
-        width="500px"
-        height="700px"
+        width={{ xs: "95%", sm: "90%", md: "500px" }}
+        height={{ xs: "90%", sm: "85%", md: "700px" }}
         border="1px solid black"
+        borderRadius={4} // Rounded corners for a softer look
         p={2}
         spacing={3}
+        sx={{
+          backgroundColor: "background.paper",
+          boxShadow: 3, // Add shadow to give a floating effect
+          "@media (max-width: 600px)": {
+            height: "calc(100vh - 60px)", // Adjust height for mobile devices
+          },
+        }}
       >
         <Stack
           direction="column"
@@ -118,22 +132,30 @@ export default function Home() {
                     : "secondary.main"
                 }
                 color="white"
-                borderRadius={16}
-                p={3}
+                borderRadius={6}
+                p={2}
+                sx={{
+                  maxWidth: "90%",
+                  wordBreak: "break-word",
+                  "@media (max-width: 600px)": {
+                    p: 1,
+                    maxWidth: "90%",
+                  },
+                }}
               >
                 {message.content}
               </Box>
               {index === messages.length - 1 &&
                 message.role === "assistant" &&
                 loading && (
-                  <Box color="gray" mt={1} fontStyle="italic">
+                  <Box color="gray" mt={2} fontStyle="italic">
                     Typing...
                   </Box>
                 )}
             </Box>
           ))}
         </Stack>
-        <Stack direction="row" spacing={2}>
+        <Stack direction="row" spacing={1} sx={{ mt: 1 }}>
           <TextField
             label="message"
             fullWidth
@@ -143,8 +165,13 @@ export default function Home() {
             }}
             onKeyDown={handleKeyDown} // Add key down handler
             multiline
+            sx={{
+              "@media (max-width: 600px)": {
+                fontSize: "0.875rem", // Smaller font size for mobile
+              },
+            }}
           />
-          <Button variant="contained" onClick={sendMessage}>
+          <Button variant="contained" onClick={sendMessage} sx={{ ml: 1 }}>
             Send
           </Button>
         </Stack>
