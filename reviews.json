@@ -1,0 +1,124 @@
+{
+  "reviews": [
+    {
+      "professor": "Dr. Emily Carter",
+      "course": "Computer Science",
+      "rating": 4.5,
+      "comment": "Dr. Carter is an excellent professor. Her lectures are clear, and she’s always willing to help students during office hours."
+    },
+    {
+      "professor": "Dr. John Anderson",
+      "course": "English Literature",
+      "rating": 3.8,
+      "comment": "Dr. Anderson's classes are interesting, but the grading is tough. Be prepared to work hard."
+    },
+    {
+      "professor": "Dr. Sophia Martinez",
+      "course": "Mathematics",
+      "rating": 4.9,
+      "comment": "One of the best math professors I’ve had. She makes complex topics easy to understand."
+    },
+    {
+      "professor": "Dr. Michael Nguyen",
+      "course": "Physics",
+      "rating": 4.2,
+      "comment": "Dr. Nguyen is very knowledgeable, but his lectures can be a bit fast-paced."
+    },
+    {
+      "professor": "Dr. Linda Zhang",
+      "course": "Biology",
+      "rating": 4.7,
+      "comment": "Dr. Zhang is passionate about biology and makes the subject interesting. Her labs are well-organized."
+    },
+    {
+      "professor": "Dr. Robert King",
+      "course": "History",
+      "rating": 3.5,
+      "comment": "Dr. King knows his history, but his lectures can be dry. The exams are challenging."
+    },
+    {
+      "professor": "Dr. Sarah Lee",
+      "course": "Chemistry",
+      "rating": 4.4,
+      "comment": "Dr. Lee is great at explaining difficult concepts. Her exams are fair and reflect the material covered in class."
+    },
+    {
+      "professor": "Dr. Mark Taylor",
+      "course": "Economics",
+      "rating": 3.9,
+      "comment": "Dr. Taylor's lectures are engaging, but the homework assignments are quite difficult."
+    },
+    {
+      "professor": "Dr. Karen Wilson",
+      "course": "Psychology",
+      "rating": 4.8,
+      "comment": "Dr. Wilson is an amazing professor. She makes psychology fascinating and is very approachable."
+    },
+    {
+      "professor": "Dr. James White",
+      "course": "Political Science",
+      "rating": 4.0,
+      "comment": "Dr. White is a knowledgeable professor, but his lectures can be long-winded. The discussions are engaging."
+    },
+    {
+      "professor": "Dr. Jessica Brown",
+      "course": "Philosophy",
+      "rating": 4.3,
+      "comment": "Dr. Brown's classes are thought-provoking, and she encourages students to think critically."
+    },
+    {
+      "professor": "Dr. Richard Harris",
+      "course": "Sociology",
+      "rating": 3.7,
+      "comment": "Dr. Harris's lectures are informative, but sometimes lack clarity. The readings are essential for understanding the material."
+    },
+    {
+      "professor": "Dr. Amanda Miller",
+      "course": "Art History",
+      "rating": 4.6,
+      "comment": "Dr. Miller is passionate about art and her enthusiasm is contagious. The course is well-structured."
+    },
+    {
+      "professor": "Dr. Charles Thompson",
+      "course": "Engineering",
+      "rating": 3.8,
+      "comment": "Dr. Thompson is a solid professor, but his exams are tough. Make sure to study the lecture notes."
+    },
+    {
+      "professor": "Dr. Lisa Evans",
+      "course": "Music Theory",
+      "rating": 4.7,
+      "comment": "Dr. Evans is fantastic. She makes music theory easy to understand, and her assignments are fair."
+    },
+    {
+      "professor": "Dr. Paul Baker",
+      "course": "Environmental Science",
+      "rating": 4.1,
+      "comment": "Dr. Baker is knowledgeable, but his lectures can be dry at times. The labs are interesting though."
+    },
+    {
+      "professor": "Dr. Rachel Collins",
+      "course": "Statistics",
+      "rating": 4.5,
+      "comment": "Dr. Collins explains concepts clearly and makes statistics enjoyable. Her assignments are very helpful."
+    },
+    {
+      "professor": "Dr. David Scott",
+      "course": "Business Administration",
+      "rating": 4.3,
+      "comment": "Dr. Scott's classes are practical and engaging. He uses real-world examples that are very relevant."
+    },
+    {
+      "professor": "Dr. Jennifer Young",
+      "course": "Computer Engineering",
+      "rating": 4.4,
+      "comment": "Dr. Young is a great professor. She’s very knowledgeable and always available for questions."
+    },
+    {
+      "professor": "Dr. Thomas Wright",
+      "course": "Mechanical Engineering",
+      "rating": 3.6,
+      "comment": "Dr. Wright's lectures are detailed, but the pace can be overwhelming. The projects are challenging but rewarding."
+    }
+  ]
+}
